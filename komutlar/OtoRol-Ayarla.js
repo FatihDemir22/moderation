@@ -13,9 +13,9 @@ exports.run = (client, message, args) => {
       new Discord.MessageEmbed().setColor("#00ff00").setDescription(`
 Ayarlamam İçin Bir Rol Etiketlemeilisin. 
 Rolü Etiketleyemiyorsan **Rolün Etiketleme Seçeneğini Aktif Etmeyi Unutma**
-Örnek Kullanım : sn!otorol @rol #kanal 
+Örnek Kullanım : .otorol @rol #kanal 
 
- Önemli Not!!: Oto Rol Vermem İçin Verilecek Rolün Üstünde Bir Rolüm Olmalı Yoksa Rolü Veremem :)
+  Oto Rol Vermem İçin Verilecek Rolün Üstünde Bir Rolüm Olmalı Yoksa Rolü Veremem :)
  `)
     );
 
@@ -25,9 +25,9 @@ Rolü Etiketleyemiyorsan **Rolün Etiketleme Seçeneğini Aktif Etmeyi Unutma**
 `);
 
   message.channel.send(`╔▬▬▬▬▬▬▬▬Otorol▬▬▬▬▬▬▬▬▬
-║► ✔️ Otorol Aktif Edildi.
-║► ✔️ **${rol}** Olarak Güncelledim! 
-║► ✔️ Kayıt Kanalını **${kanal}** Olarak Güncelledim! 
+║► <a:onay:973838056643776513> Otorol Aktif Edildi.
+║► <a:onay:973838056643776513> **${rol}** Olarak Güncelledim! 
+║► <a:onay:973838056643776513> Kayıt Kanalını **${kanal}** Olarak Güncelledim! 
 ╚▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬`)
 
   db.set(`otoRL_${message.guild.id}`, rol.id);

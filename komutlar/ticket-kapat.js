@@ -1,81 +1,70 @@
 const Discord = require("discord.js");
 const data = require("quick.db");
-
+const ayarlar = require("../ayarlar");
 exports.run = async (client, message, args) => {
   const prefix =
-    (await data.fetch(`prefix.${message.guild.id}`)) || process.env.prefix;
-  const ad = await data.fetch(`numara.${message.channel.id}`);
-  if (!ad) {
-    ad = "0";
-  }
-  //
-  if (
-    message.channel.name === `ticket-${ad}` ||
-    message.channel.name === `closed-${ad}`
-  ) {
-    const ann = await data.fetch(
-      `asd.${message.guild.id}.${message.channel.id}.${message.author.id}`
-    );
-    if (!ann) return message.channel.send(`Bu bilet senin değil.`);
-    message.delete();
+    (await data.fetch(`prefix.${message.guild.id}`)) || ayarlar.prefix;
+  if (!message.member.hasPermission("ADMINISTRATOR"))
+    return message.channel.send("Bu komutu kullanmak için yetkin yok.");
 
+  if (args[0] === "ayarla") {
+    const kanalbelirle = await data.fetch(`kanal.${message.guild.id}`);
+    if (kanalbelirle)
+      return message.channel.send(
+        new Discord.MessageEmbed()
+          .setColor(`#ee7621`)
+          .setDescription(
+            `Mesajı göndereceğim kanal zaten ayarlı: ${prefix}ticket-kanal sıfırla`
+          )
+      );
+    let kanal = message.mentions.channels.first();
+    if (!args[1])
+      return message.channel.send(
+        new Discord.MessageEmbed()
+          .setColor(`#ee7621`)
+          .setDescription(`Bir kanalı etiketlemelisin.`)
+      );
+    if (!kanal)
+      return message.channel.send(
+        new Discord.MessageEmbed()
+          .setColor(`#ee7621`)
+          .setDescription(`Etiketlediğin kanalı bulamıyorum.`)
+      );
+    data.set(`kanal.${message.guild.id}`, kanal.id);
     message.channel.send(
       new Discord.MessageEmbed()
         .setColor(`#ee7621`)
-        .setDescription(`Bilet ${message.author} tarafından kapatıldı.`)
+        .setDescription(
+          `Mesajın kanalı başarıyla ayarlandı: ${prefix}ticket gönder`
+        )
     );
-    message.channel.setName(`closed-${ad}`);
-    message.channel
-      .send(
-        new Discord.MessageEmbed().setColor(`#ee7621`)
-          .setDescription(`:unlock:: Ticketi tekrar açar.
+  }
 
-:no_entry:: Ticketi siler.`)
-      )
-      .then(m => {
-        m.react("🔓");
-        m.react("⛔");
-        let sil = (reaction, user) =>
-          reaction.emoji.name === "⛔" &&
-          user.id !== client.user.id &&
-          user.id == message.author.id;
-        let sill = m.createReactionCollector(sil, { time: 0 });
-        let geri = (reaction, user) =>
-          reaction.emoji.name === "🔓" &&
-          user.id !== client.user.id &&
-          user.id == message.author.id;
-        let geriaç = m.createReactionCollector(geri, { time: 0 });
+  if (args[0] === "sıfırla") {
+    const kanalbelirle = await data.fetch(`kanal.${message.guild.id}`);
+    if (!kanalbelirle)
+      return message.channel.send(
+        new Discord.MessageEmbed().setDescription(
+          `Mesajı göndereceğim kanal zaten ayarlı değil: ${prefix}ticket-kanal ayarla`
+        )
+      );
 
-        geriaç.on("collect", async reaction => {
-          const author = reaction.users.last();
-          m.delete("500");
-          reaction.remove(author.id);
-          message.channel.send(
-            new Discord.MessageEmbed()
-              .setColor(`#ee7621`)
-              .setDescription(
-                `Bilet ${message.author} tarafından tekrar açıldı.`
-              )
-          );
-          message.channel.setName(`ticket-${ad}`);
-        });
+    data.delete(`kanal.${message.guild.id}`);
+    message.channel.send(
+      new Discord.MessageEmbed()
+        .setColor(`#ee7621`)
+        .setDescription(
+          `Mesajın kanalı başarıyla sıfırlandı: ${prefix}ticket-kanal ayarla #kanal`
+        )
+    );
+  }
 
-        sill.on("collect", async reaction => {
-          const author = reaction.users.last();
-          reaction.remove(author.id);
-          message.channel.send(
-            new Discord.MessageEmbed()
-              .setColor(`#ee7621`)
-              .setDescription(`Bilet 5 saniye sonra ebediyen silinecek.`)
-          );
-          setTimeout(async () => {
-            message.channel.delete();
-            data.delete(`asd.${message.guild.id}.${message.channel.id}`);
-          }, 5000);
-        });
-      });
-  } else {
-    return message.channel.send(`Bu komutu bir bilet kanalında kullanın.`);
+  if (!message.includes === "sıfırla" || "ayarla") {
+    return message.channel.send(
+      new Discord.MessageEmbed()
+        .setColor(`#ee7621`)
+        .setDescription("Sadece `ayarla` veya `sıfırla` kullanın.")
+    );
   }
 };
 exports.conf = {
@@ -86,5 +75,5 @@ exports.conf = {
 };
 
 exports.help = {
-  name: "ticket-kapat"
+  name: "ticket-kanal"
 };

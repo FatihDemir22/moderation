@@ -4,15 +4,12 @@ let prefix = ayarlar.prefix;
 
 exports.run = async (bot, msg, args) => {
   const seviye = new Discord.MessageEmbed()
-    .setAuthor(`Gweep Creative | Öneri Sistem`)
+    .setAuthor(`◈ | Hearted | Öneri Sistem`)
     .setTitle(``)
     .setColor("#00ff00")
     .setThumbnail(
-      "https://cdn.discordapp.com/attachments/823592301796392960/826048182990667806/standard_2.gif"
-    )
-    .setDescription(
-      `Ⓜ️ Gweep Creative Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
-    )
+      "https://cdn.discordapp.com/attachments/838113515629707304/978700738496700416/ezgif.com-gif-maker_3.gif"
+    )  
     .addField(
       `**__ÖneriLog Ayarla__**`,
       `🔸 \`${prefix}önerilog ayarla\` \n Discord Sunucuza Öneri Log Kanal Ayarlarsınız.`,
@@ -30,12 +27,12 @@ exports.run = async (bot, msg, args) => {
     )
     .addField(
       `**__Shadow Sunucuya Özel Öneri__**`,
-      `<a:green:822530401301954632> \`${prefix}öneri\` \n Discord Sunucumuza Bota Veya MCSunucumuza Öneri Yapabilirsiniz..`,
+      `<a:yldz1:973867589493202984> \`${prefix}öneri\` \n Discord Sunucumuza Bota Veya MCSunucumuza Öneri Yapabilirsiniz..`,
       true
     )
     .addField(
       `__Bilgilendirme__`,
-      `⚜️  \`${prefix}davet\` | Botu Sununuya Davet Edersiniz\n ⚜️ \`${prefix}botbilgi\` | Botun İstatistiklerini Görürsünüz \n ⚜️ \`${prefix}iletişim\` | QualitySel İletişim Bilgileri.`
+      ` ⚜️ \`${prefix}botbilgi\` | Botun İstatistiklerini Görürsünüz \n`
     );
   msg.channel.send(seviye);
 };

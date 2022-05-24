@@ -16,8 +16,8 @@ exports.run = async (client, message, args) => {
       .get(kanalbelirle)
       .send(
         new Discord.MessageEmbed()
-          .setTitle(`**Gweep Creative / Destek Sistemi**`)
-          .setFooter(`Gweep Creative`, client.user.avatarURL())
+          .setTitle(`**◈ | Hearted / Destek Sistemi**`)
+          .setFooter(`◈ | Hearted`, client.user.avatarURL())
           .setColor(`#ee7621`)
           .setDescription(
             `**▸ Destek Talebi açarken lütfen Doğru ve Düzgün bir şekilde açınız, aksi taktirde açılan destek taleblerine Cevap verilmeyecektir ve kapatılcaktır.
@@ -86,19 +86,19 @@ Bileti kapatmak istersen: 🔒`
               s23.on("collect", async reaction => {
                 const author = reaction.users.cache.last();
                 reaction.users.remove(author.id);
-                m.react(`✅`);
-                m.react(`❌`);
+                m.react(`<a:onay:973838056643776513>`);
+                m.react(`<a:red:976917496890294324>`);
                 let sil = (reaction, user) =>
-                  reaction.emoji.name === "✅" && user.id !== client.user.id;
+                  reaction.emoji.name === "<a:onay:973838056643776513>" && user.id !== client.user.id;
                 let sill = m.createReactionCollector(sil, { time: 0 });
                 let ss = (reaction, user) =>
-                  reaction.emoji.name === "❌" && user.id !== client.user.id;
+                  reaction.emoji.name === "<a:red:976917496890294324>" && user.id !== client.user.id;
                 let s2 = m.createReactionCollector(ss, { time: 0 });
                 s2.on("collect", async reaction => {
                   s.messages.fetch({ limit: 10 }).then(async messages => {
                     messages
                       .get(m.id)
-                      .reactions.cache.get("✅")
+                      .reactions.cache.get("<a:onay:973838056643776513>")
                       .removeAll();
                     reaction.users.removeAll();
                   });
@@ -182,4 +182,4 @@ exports.conf = {
 
 exports.help = {
   name: "ticket"
-};
+}

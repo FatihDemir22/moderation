@@ -20,80 +20,80 @@ exports.run = (client, msg, args) => {
 
   //yönetici
   if (msg.member.hasPermission("ADMINISTRATOR"))
-    x = "✔️";
+    x = "<a:onay:973838056643776513>";
   if (!msg.member.hasPermission("ADMINISTRATOR"))
-    x = "❌";
+    x = "<a:red:976917496890294324>";
 
   //Denetim kaydı
   if (msg.member.hasPermission("VIEW_AUDIT_LOG"))
-    x2 = "✔️";
+    x2 = "<a:onay:973838056643776513>";
   if (!msg.member.hasPermission("VIEW_AUDIT_LOG"))
-    x2 = "❌";
+    x2 = "<a:red:976917496890294324>";
 
   //Sunucuyu yönet
   if (msg.member.hasPermission("MANAGE_GUILD"))
-    x3 = "✔️";
+    x3 = "<a:onay:973838056643776513>";
   if (!msg.member.hasPermission("MANAGE_GUILD"))
-    x3 = "❌";
+    x3 = "<a:red:976917496890294324>";
 
   //Rolleri yönet
   if (msg.member.hasPermission("MANAGE_ROLES"))
-    x4 = "✔️";
+    x4 = "<a:onay:973838056643776513>";
   if (!msg.member.hasPermission("MANAGE_ROLES"))
-    x4 = "❌";
+    x4 = "<a:red:976917496890294324>";
 
   //Kanalları yönet
   if (msg.member.hasPermission("MANAGE_CHANNELS"))
-    x5 = "✔️";
+    x5 = "<a:onay:973838056643776513>";
   if (!msg.member.hasPermission("MANAGE_CHANNELS"))
-    x5 = "❌";
+    x5 = "<a:red:976917496890294324>";
 
   //üyeleri at
   if (msg.member.hasPermission("KICK_MEMBERS"))
-    x6 = "✔️";
+    x6 = "<a:onay:973838056643776513>";
   if (!msg.member.hasPermission("KICK_MEMBERS"))
-    x6 = "❌";
+    x6 = "<a:red:976917496890294324>";
 
   //üyeleri yasakla
   if (msg.member.hasPermission("BAN_MEMBERS"))
-    x7 = "✔️";
+    x7 = "<a:onay:973838056643776513>";
   if (!msg.member.hasPermission("BAN_MEMBERS"))
-    x7 = "❌";
+    x7 = "<a:red:976917496890294324>";
 
   //mesajları yönet
   if (msg.member.hasPermission("MANAGE_MESSAGES"))
-    x8 = "✔️";
+    x8 = "<a:onay:973838056643776513>";
   if (!msg.member.hasPermission("MANAGE_MESSAGES"))
-    x8 = "❌";
+    x8 = "<a:red:976917496890294324>";
 
   //kullanıcı adlarını yönet
   if (msg.member.hasPermission("MANAGE_NICKNAMES"))
-    x9 = "✔️";
+    x9 = "<a:onay:973838056643776513>";
   if (!msg.member.hasPermission("MANAGE_NICKNAMES"))
-    x9 = "❌";
+    x9 = "<a:red:976917496890294324>";
 
   //emojileri yönet
   if (msg.member.hasPermission("MANAGE_EMOJIS"))
-    x10 = "✔️";
+    x10 = "<a:onay:973838056643776513>";
   if (!msg.member.hasPermission("MANAGE_EMOJIS"))
-    x10 = "❌";
+    x10 = "<a:red:976917496890294324>";
 
   //webhookları yönet
   if (msg.member.hasPermission("MANAGE_WEBHOOKS"))
-    x11 = "✔️";
+    x11 = "<a:onay:973838056643776513>";
   if (!msg.member.hasPermission("MANAGE_WEBHOOKS"))
-    x11 = "❌";
+    x11 = "<a:red:976917496890294324>";
 
   msg.channel.send(
     new Discord.MessageEmbed()
       .setColor("#00ff00")
-      .setAuthor(`QualitySel  | Yetkilerim Tablo`)
+      .setAuthor(`◈ | Hearted  | Yetkilerim Tablo`)
        .addField(
       `__Bilgilendirme__`,
-      `🌐  \`${prefix}davet\` | Botu Sununuya Davet Edersiniz\n 🌐 \`${prefix}botbilgi\` | Botun İstatistiklerini Görürsünüz \n 🌐 \`${prefix}iletişim\` | QualitySel  İletişim Bilgileri.`
+      ` 🌐 \`${prefix}botbilgi\` | Botun İstatistiklerini Görürsünüz \n`
     )
       .setThumbnail(
-      "https://cdn.discordapp.com/attachments/823592301796392960/826048182990667806/standard_2.gif"
+      "https://cdn.discordapp.com/attachments/838113515629707304/978700738496700416/ezgif.com-gif-maker_3.gif"
        )
       .setDescription(stripIndents`
 

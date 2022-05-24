@@ -72,8 +72,8 @@ exports.run = function(client, message, args) {
           üye.createdAt
         ).format("YYYY HH:mm:ss")}`}\n**Bot mu?** ${
           üye.bot
-            ? "✅"
-            : "❌"
+            ? "<a:onay:973838056643776513>"
+            : "<a:red:976917496890294324>"
         }\n**Rolleri 🌀 ** ${message.guild.members
           .get(üye.id)
           .roles.filter(r => r.name !== "@everyone")
@@ -110,8 +110,8 @@ exports.run = function(client, message, args) {
           "YYYY HH:mm:ss"
         )}`}\n**Bot mu?** ${
           message.author.bot
-            ? "✅"
-            : "❌"
+            ? "<a:onay:973838056643776513>"
+            : "<a:red:976917496890294324>"
         }\n**Roller 🌀 ** ${message.guild.members.cache
           .get(message.author.id)
           .roles.cache.filter(r => r.name !== "@everyone")

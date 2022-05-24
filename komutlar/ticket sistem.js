@@ -5,17 +5,14 @@ let prefix = ayarlar.prefix;
 
 exports.run = async (bot, msg, args) => {
   const çekiliş = new Discord.MessageEmbed()
-    .setAuthor(`Gweep Creative  | Ticket Sistem`)
+    .setAuthor(`◈ | Hearted  | Ticket Sistem`)
     .setTitle(``)
    .setImage(
-      "https://cdn.discordapp.com/attachments/823190721862959134/826104795839332402/standard_4.gif"
+      "https://cdn.discordapp.com/attachments/838113515629707304/978700738496700416/ezgif.com-gif-maker_3.gif"
     )
     .setColor(`#ee7621`)
      .setThumbnail(
-      "https://cdn.discordapp.com/attachments/823592301796392960/826048182990667806/standard_2.gif"
-    )
-    .setDescription(
-      `🎫 Gweep Creative Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
+      "https://cdn.discordapp.com/attachments/838113515629707304/978700738496700416/ezgif.com-gif-maker_3.gif"
     )
     .addField(
       `**__Ticket__** `,
@@ -50,7 +47,7 @@ exports.run = async (bot, msg, args) => {
     )
     .addField(
       `__Bilgilendirme__`,
-      `🎯  \`${prefix}davet\` | Botu Sununuya Davet Edersiniz\n 🎯 \`${prefix}botbilgi\` | Botun İstatistiklerini Görürsünüz \n 🎯 \`${prefix}iletişim\` | QualitySel İletişim Bilgileri.`
+      ` 🎯 \`${prefix}botbilgi\` | Botun İstatistiklerini Görürsünüz \n`
     );
   msg.channel.send(çekiliş);
 };
@@ -66,4 +63,3 @@ exports.help = {
   description: "İstediğiniz kullanıcını bilgilerini gösterir.",
   usage: ""
 };
- 

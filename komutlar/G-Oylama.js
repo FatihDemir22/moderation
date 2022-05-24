@@ -37,8 +37,8 @@ module.exports.run = async (client, message, args) => {
     .setFooter(`${message.author.username} oylama yaptı.`)
     .setAuthor(`${client.user.username} Oylama`);
   sea.send("||@everyone|| ||@here||", { embed: embed }).then(m => {
-    let re = m.react("✔️");
-    let ra = m.react("❌");
+    let re = m.react("<a:onay:973838056643776513>");
+    let ra = m.react("<a:red:976917496890294324>");
   });
 };
 
