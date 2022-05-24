@@ -9,10 +9,7 @@ let prefix = ayarlar.prefix;
     .setTitle(``)
     .setColor("#00ff00")
     .setThumbnail(
-      "https://cdn.discordapp.com/attachments/823592301796392960/826048182990667806/standard_2.gif"    )
-    .setDescription(
-      `📯 Gweep Creative Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
-    )
+      "https://cdn.discordapp.com/attachments/838113515629707304/978700738496700416/ezgif.com-gif-maker_3.gif"    )
     .addField(
       "__**Bot Verileri**__",
       `📗 **Toplam Sunucu** **|**  \`${
@@ -25,7 +22,7 @@ let prefix = ayarlar.prefix;
     )
     .addField(
       "__**Yetkili Bilgi**__",
-      "👑 **Sunucu Sahipleri**  <@586822327568695317> \n\n"
+      "👑 **Sunucu Sahipleri**  <@838112128254476349>, <262324708609884170> \n\n"
     )
     .addField(
       "__**Sürümler**__",

@@ -5,7 +5,7 @@ const ms = require("ms");
 exports.run = async (client, message, args) => {
   function hata(mesaj) {
     let embed = new Discord.MessageEmbed()
-      .setTitle("❌ Olamaz.. Hata!")
+      .setTitle("<a:red:976917496890294324> Olamaz.. Hata!")
       .setColor("#00ff00")
       .setDescription(mesaj)
       .setFooter(
@@ -122,7 +122,7 @@ exports.run = async (client, message, args) => {
 
     let tamam = new Discord.MessageEmbed()
       .setAuthor(message.author.username, message.author.avatarURL())
-      .setTitle("✅ Kullanıcı Susturuldu!")
+      .setTitle("<a:onay:973838056643776513> Kullanıcı Susturuldu!")
       .setDescription(
         "**" +
           user.username +

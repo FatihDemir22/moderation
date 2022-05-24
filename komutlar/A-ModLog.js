@@ -26,7 +26,7 @@ exports.run = async (client, message, args) => {
       new Discord.MessageEmbed()
         .setColor("#00ff00")
         .setDescription(
-          `✅ | Mod-log kanalı başarıyla sıfırlandı.`
+          `<a:onay:973838056643776513> | Mod-log kanalı başarıyla sıfırlandı.`
         )
     );
     return;

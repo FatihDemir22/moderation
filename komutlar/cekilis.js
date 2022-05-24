@@ -4,14 +4,11 @@ exports.run = async (client, message) => {
   let prefix = process.env.prefix;
 
   const embedgenel = new Discord.MessageEmbed()
-    .setAuthor(`Gweep Creative | Çekiliş `)
+    .setAuthor(`◈ | Hearted | Çekiliş `)
     .setTitle(``)
     .setColor("#00ff00")
     .setThumbnail(
-      "https://cdn.discordapp.com/attachments/823592301796392960/826048182990667806/standard_2.gif"
-    )
-    .setDescription(
-      `🎁 Gweep Creative Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
+      "https://cdn.discordapp.com/attachments/838113515629707304/978700738496700416/ezgif.com-gif-maker_3.gif"
     )
     .addField(
       `__Başlat__`,
@@ -31,7 +28,7 @@ exports.run = async (client, message) => {
    
     .addField(
       `__Bilgilendirme__`,
-      `<a:yesil:822529538663514173>  \`${prefix}davet\` | Botu Sununuya Davet Edersiniz\n <a:yesil:822529538663514173> \`${prefix}botbilgi\` | Botun İstatistiklerini Görürsünüz \n <a:yesil:822529538663514173> \`${prefix}iletişim\` | QualitySel İletişim Bilgileri.`
+      ` <a:yldz1:973867589493202984> \`${prefix}botbilgi\` | Botun İstatistiklerini Görürsünüz \n`
     );
   return message.channel.send(embedgenel);
 };

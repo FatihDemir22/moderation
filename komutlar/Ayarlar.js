@@ -5,14 +5,11 @@ let prefix = ayarlar.prefix;
 exports.run = async (client, message) => {
 
   const embedayarlar = new Discord.MessageEmbed()
-    .setAuthor(`Gweep Creative | Ayarlar`)
+    .setAuthor(`◈ | Hearted | Ayarlar`)
     .setTitle(``)
     .setColor("#00ff00")
     .setThumbnail(
-      "https://cdn.discordapp.com/attachments/823592301796392960/826048182990667806/standard_2.gif"
-    )
-    .setDescription(
-      `🔰 Gweep Creative  Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
+      "https://cdn.discordapp.com/attachments/838113515629707304/978700738496700416/ezgif.com-gif-maker_3.gif"
     )
     .addField(
       `__ModLog__`,
@@ -81,7 +78,7 @@ exports.run = async (client, message) => {
     )
     .addField(
       `__Bilgilendirme__`,
-      `⏳  \`${prefix}davet\` | Botu Sununuya Davet Edersiniz\n ⏳ \`${prefix}botbilgi\` | Botun İstatistiklerini Görürsünüz \n ⏳ \`${prefix}iletişim\` | QualitySel  İletişim Bilgileri.`
+      ` ⏳ \`${prefix}botbilgi\` | Botun İstatistiklerini Görürsünüz \n`
     );
   return message.channel.send(embedayarlar);
 };

@@ -19,7 +19,7 @@ exports.run = async (client, message, args) => {
       new Discord.MessageEmbed()
         .setColor("#00ff00")
         .setDescription(
-          `❗️ ❕ Daha BanLog Ayarlamadın \n > ✅ Doğru Ayarlamak İçin \`${prefix}ban-log #kanal\``
+          `❗️ ❕ Daha BanLog Ayarlamadın \n > <a:onay:973838056643776513> Doğru Ayarlamak İçin \`${prefix}ban-log #kanal\``
         )
     );
   await db.set("ce-banlog." + message.guild.id, CEChannel.id);

@@ -117,45 +117,51 @@ client.login(process.env.token);
 
 //AFK Baş
 
-const ms = require("parse-ms");
-const { DiscordAPIError } = require("discord.js");
+client.on("message" , message => {
+  // Baş Tanımlar
+  if(!message.guild) return;
+  if(message.content.startsWith(ayarlar.prefix + 'afk')) return;
 
-client.on("message", async message => {
-  if (message.author.bot) return;
-  if (!message.guild) return;
-  if (message.content.includes(`afk`)) return;
+  // Let Tanımları & Data Veri Çekme İşlemleri
+  let codemarefiafk = message.mentions.users.first()
+  let codemarefikisi = db.fetch(`kisiid_${message.author.id}_${message.guild.id}`)
+  let codemarefikisiisim = db.fetch(`kisiisim_${message.author.id}_${message.guild.id}`)
 
-  if (await db.fetch(`afk_${message.author.id}`)) {
-    db.delete(`afk_${message.author.id}`);
-    db.delete(`afk_süre_${message.author.id}`);
+  // Eğer Afk Kişi Etiketlenirse Mesaj Atalım
+  if(codemarefiafk){
+    // Let Tanımları
+    let cmfsebep = db.fetch(`cmfsebep_${codemarefiafk.id}_${message.guild.id}`)
+    let codemarefikisi2 = db.fetch(`kisiid_${codemarefiafk.id}_${message.guild.id}`)
 
-    const embed = new Discord.MessageEmbed()
-
-      .setColor("#00ff00")
-      .setAuthor(message.author.username, message.author.avatarURL)
-      .setDescription(`${message.author.username} Artık \`AFK\` Değilsin.`);
-
-    message.channel.send(embed);
+    if(message.content.includes(codemarefikisi2)){
+      const cmfbilgiafk = new Discord.MessageEmbed()
+      .setDescription(`${message.author} - Etiketlemiş Olduğun <@!${codemarefikisi2}> Kişisi Şuan **${cmfsebep}** Sebebiyle AFK`)
+      .setColor("#36393F")
+      .setFooter('◈ | Hearted - AFK Sistemi')
+      message.channel.send(cmfbilgiafk)
+    }
   }
 
-  var USER = message.mentions.users.first();
-  if (!USER) return;
-  var REASON = await db.fetch(`afk_${USER.id}`);
+  // Eğer Afk Kişi Mesaj Yazarsa Afk'lıktan Çıkaralım Ve Mesaj Atalım
+  if(message.author.id === codemarefikisi){
 
-  if (REASON) {
-    let süre = await db.fetch(`afk_süre_${USER.id}`);
-    let timeObj = ms(Date.now() - süre);
+    // Datadaki AFK Kullanıcı Verilerini Silelim
+    db.delete(`cmfsebep_${message.author.id}_${message.guild.id}`)
+    db.delete(`kisiid_${message.author.id}_${message.guild.id}`)
+    db.delete(`kisiisim_${message.author.id}_${message.guild.id}`)
 
-    const afk = new Discord.MessageEmbed()
+    // Afk'lıktan Çıktıktan Sonra İsmi Eski Haline Getirsin
+    message.member.setNickname(codemarefikisiisim)
 
-      .setColor("#00ff00")
-      .setDescription(
-        `**Bu Kullanıcı AFK**\n\n**Afk Olan Kullanıcı :** \`${USER.tag}\`\n**Afk Süresi :** \`${timeObj.hours}saat\` \`${timeObj.minutes}dakika\` \`${timeObj.seconds}saniye\`\n**Sebep :** \`${REASON}\``
-      );
-
-    message.channel.send(afk);
-  }
-});
+    // Bilgilendirme Mesajı Atalım
+    const cmfbilgiafk = new Discord.MessageEmbed()
+    .setAuthor(`Hoşgeldin ${message.author.username}`, message.author.avatarURL({dynamic: true, size: 2048}))
+    .setDescription(`<@!${codemarefikisi}> Başarılı Bir Şekilde **AFK** Modundan Çıkış Yaptın.`)
+    .setColor("#36393F")
+    .setFooter('◈ | Hearted - AFK Sistemi')
+    message.channel.send(cmfbilgiafk)
+  }  
+})
 
 //AFK Son
 

@@ -1,44 +1,30 @@
-const Discord = require(`discord.js`);
+const Discord = require('discord.js')
 
-exports.run = async (client, message) => {
-  let user = message.mentions.users.first() || message.author;
+    exports.run = (client, message, args) => {
+        let kullanıcı = message.mentions.members.first();
 
-  let userinfo = {};
-  userinfo.avatar = user.avatarURL();
-
-  if (user) {
-    const embed = new Discord.MessageEmbed()
-      .setAuthor(`${user.tag} Adlı Kullanıcının Avatarı`)
-      .setColor("#00ff00")
-      .setFooter(
-        `${message.author.username} tarafından istendi.`,
-        userinfo.avatar
-      )
-      .setImage(user.displayAvatarURL({ dynamic: true }));
-    message.channel.send(embed);
-  } else {
-    const embed = new Discord.MessageEmbed()
-      .setAuthor(
-        `${message.author.tag} Adlı Kullanıcının Avatarı »`,
-        message.author.avatarURL
-      )
-      .setColor("#00ff00")
-      .setFooter(
-        `${message.author.username} tarafından istendi.`,
-        userinfo.avatar
-      )
-      .setImage(message.author.avatarURL({ dynamic: true }));
-    message.channel.send(embed);
-  }
-};
+        if(kullanıcı){
+            const $adista = new Discord.MessageEmbed()
+            .setDescription(`${kullanıcı} Kişisinin Profil Resmi`)
+            .setColor('#36393F')
+            .setImage(kullanıcı.user.avatarURL({dynamic: true, size: 2048}))
+            message.channel.send($adista)
+        } else {
+            const $adista = new Discord.MessageEmbed()
+            .setDescription(`${message.author} Profil Resmin`)
+            .setColor('#36393F')
+            .setImage(message.author.avatarURL({dynamic: true, size: 2048}))
+            message.channel.send($adista)
+        }
+    }
 
 exports.conf = {
-  enabled: true,
-  guildOnly: false,
-  aliases: ["avatar", "avatarım"],
-  permLevel: 0
-};
+    enabled: true,
+    guildOnly: false,
+    aliases: ['Avatar','AVATAR','pp','Pp','PP','İCON','icon','İcon','aVATAR','avatra','Avatra','AVATRA','avtra','AVTRA','Avtra','AVATAR'],
+    permLevel: 0
+}
 
 exports.help = {
-  name: "avatar"
-};
+    name: 'avatar'
+}
