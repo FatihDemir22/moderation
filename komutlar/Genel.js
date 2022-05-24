@@ -43,7 +43,7 @@ exports.run = async (client, message) => {
     )
     .addField(
       `__Çek__`,
-      ` 🚩  \`${prefix}Çek\` Herhangi Bir Ses Kanalındaki Birisini Ya.`,
+      ` 🚩  \`${prefix}Çek\` Herhangi Bir Ses Kanalındaki Birisini Yanınıza Çekersiniz.`,
       true
     )
      .addField(
