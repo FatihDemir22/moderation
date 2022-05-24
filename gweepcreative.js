@@ -124,6 +124,8 @@ client.channels.cache.get(csc).join()
 }) 
 
 ////-------Etiket=prefix---Son--------\\\\\\\\\
+////-------Antiraid---baş--------\\\\\\\\\
+////-------Antiraid---Son--------\\\\\\\\\
 
 //AFK Baş
 

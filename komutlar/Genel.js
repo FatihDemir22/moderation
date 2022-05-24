@@ -41,6 +41,11 @@ exports.run = async (client, message) => {
       ` 🚩  \`${prefix}afk\` Kullanıcı Bir Sebeple AFK Moduna Girer.`,
       true
     )
+    .addField(
+      `__Çek__`,
+      ` 🚩  \`${prefix}Çek\` Herhangi Bir Ses Kanalındaki Birisini Ya.`,
+      true
+    )
      .addField(
       `__Say__`,
       ` 🚩  \`${prefix}say\` Toplam Kanal Seviyeni Gösteren Gelişmiş Say Komutu.`,
