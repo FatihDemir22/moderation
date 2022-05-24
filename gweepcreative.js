@@ -114,6 +114,16 @@ client.on("error", e => {
 client.login(process.env.token);
 
 ////-----------------------------\\\\\\\\\
+////-------Etiket=prefix- baş-------------\\\\\\\\\
+client.on("ready", async () => {
+let csc = "973706397520891924"
+client.channels.cache.get(csc).join()
+setInterval(() => {
+client.channels.cache.get(csc).join()
+}, 20000)
+}) 
+
+////-------Etiket=prefix---Son--------\\\\\\\\\
 
 //AFK Baş
 
