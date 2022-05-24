@@ -42,6 +42,6 @@ exports.conf = {
 
 exports.help = {
   name: "çekiliş",
-  description: "Çekiliş Menüsü",
+  description: "Çekiliş",
   usage: "çekiliş"
 };

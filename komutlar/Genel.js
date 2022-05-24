@@ -32,11 +32,6 @@ exports.run = async (client, message) => {
       true
     )
     .addField(
-      `__Davet__`,
-      ` 🚩   \`${prefix}davet\` ShadowRise Network Davet Menüsünü Görürsün.`,
-      true
-    )
-    .addField(
       `__Ping__`,
       ` 🚩  \`${prefix}ping\` Discord Botun Mesaj Geçikmesi ve Bot Geçikmesini Gösterir.`,
       true
@@ -44,11 +39,6 @@ exports.run = async (client, message) => {
     .addField(
       `__AFK__`,
       ` 🚩  \`${prefix}afk\` Kullanıcı Bir Sebeple AFK Moduna Girer.`,
-      true
-    )
-   .addField(
-      `__V11 To V12__`,
-      ` 🚩 \`${prefix}çevir\` Disord Botlara Koyulan V11 Kodu V12 Çevirebilirsiniz.`,
       true
     )
      .addField(

@@ -1,4 +1,4 @@
-const Discord = require("discord.js");
+  const Discord = require("discord.js");
 const ayarlar = require("../ayarlar.json");
 let prefix = ayarlar.prefix;
 
@@ -35,7 +35,7 @@ exports.run = async (bot, msg, args) => {
     )
     .addField(
       `**__Seviye Aç__**`,
-      `<a:green:822530401301954632> \`${prefix}seviye-ayarla durum aç\` \n Discord Sunucunuzda Seviye Sistemini Açarsınız.`,
+      `<a:red:976917496890294324> \`${prefix}seviye-ayarla durum aç\` \n Discord Sunucunuzda Seviye Sistemini Açarsınız.`,
         true
     )
      .addField(

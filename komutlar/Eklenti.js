@@ -42,11 +42,6 @@ exports.run = async (client, message) => {
       `♻️ \`${prefix}ban-sistem\` Ayarlanabilir Ban Sistem`,
       true
     )
-      .addField(
-      `__AboneRol Sistem__`,
-      `♻️ \`${prefix}abonerol-sistem\` Ayarlanabilir Abone Rol Sistem`,
-      true
-    )
     .addField(
       `__Bilgilendirme__`,
       ` 🔱 \`${prefix}botbilgi\` | Botun İstatistiklerini Görürsünüz \n`
