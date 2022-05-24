@@ -18,11 +18,6 @@ exports.run = async (client, message) => {
       true
     )
     .addField(
-      `__Minecraft Ödül__`,
-      `📯 \`${prefix}mcödül \` Yazdıgınız Cümleyi Minecraft Ödüle Aktarır.`,
-      true
-    )
-    .addField(
       `__TKM__`,
       `📯 \`${prefix}tkm [Seçtigin] \` Botla Taş , Kağıt Ve Makas Oynarsın.`,
       true
