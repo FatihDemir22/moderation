@@ -119,7 +119,7 @@ exports.run = function(client, message, args) {
           .join(" **|** ")}`
       )
       .setTimestamp()
-      .setFooter(`QualitySel  | Discord Profil`);
+      .setFooter(`Hearted  | Discord Profil`);
     message.channel.send(embed);
   }
 };

@@ -37,7 +37,7 @@ exports.run = async (client, message, args) => {
       new Discord.MessageEmbed()
         .setColor("#00ff00")
         .setDescription(
-          `<a:red:976917496890294324 Yanlış Kullanım \n Doğru Kullanım: ${prefix}mod-log #kanal`
+          `<a:red:976917496890294324> Yanlış Kullanım \n Doğru Kullanım: ${prefix}mod-log #kanal`
         )
     );
 

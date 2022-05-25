@@ -32,11 +32,11 @@ exports.run = async (client, message, args) => {
 
   if (!user || user.bot)
     return hata(
-      "**Susturmamı İstediğin Kişiyi Etiketlemelisin!. **"
+      "**Susturmamı İstediğin Kişiyi Etiketle! **"
     );
   if (!süre)
     return hata(
-      "Kullanıcının ne kadar muteli kalmasını istediğini belirtmelisin **"
+      "Lütfen Ne Kadar Süre Susturacağımı Belirt! **"
     );
   if (!sebep) sebep = "Bir neden girilmedi!";
 
