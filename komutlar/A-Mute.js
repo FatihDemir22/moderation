@@ -9,7 +9,7 @@ exports.run = async (client, message, args) => {
       .setColor("#00ff00")
       .setDescription(mesaj)
       .setFooter(
-        client.user.username + " | Shadow Mute Sistemi",
+        client.user.username + " | Hearted Mute Sistemi",
         client.user.avatarURL()
       );
     return message.channel
@@ -32,15 +32,11 @@ exports.run = async (client, message, args) => {
 
   if (!user || user.bot)
     return hata(
-      "Mutelenmesini istediğin kullanıcıyı belirtmelisin. Örnek kullanım: **" +
-        process.env.prefix +
-        "sustur @CodEming 1saat Spam**"
+      "**Susturmamı İstediğin Kişiyi Etiketlemelisin!. **"
     );
   if (!süre)
     return hata(
-      "Kullanıcının ne kadar muteli kalmasını istediğini belirtmelisin. Örnek kullanım: **" +
-        process.env.prefix +
-        "sustur @CodEming 1saat Spam**"
+      "Kullanıcının ne kadar muteli kalmasını istediğini belirtmelisin **"
     );
   if (!sebep) sebep = "Bir neden girilmedi!";
 
