@@ -10,9 +10,6 @@ exports.run = async (bot, msg, args) => {
     .setThumbnail(
       "https://cdn.discordapp.com/attachments/824633401096011862/824662081882161214/standard_3.gif"
     )
-    .setDescription(
-      `<a:tik:822531200353959937> Shadow Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
-    )
     .addField(
       `**__Seviye__**`,
       `<a:green:822530401301954632> \`${prefix}seviye\` \n Sizin Özelliştirdiginiz Seviye Sıralama Kartını Gösterir.`,
