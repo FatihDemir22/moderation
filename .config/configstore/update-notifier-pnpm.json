@@ -1,0 +1,10 @@
+{
+	"optOut": false,
+	"lastUpdateCheck": 1653590020712,
+	"update": {
+		"latest": "7.1.5",
+		"current": "2.25.5",
+		"type": "major",
+		"name": "pnpm"
+	}
+}
